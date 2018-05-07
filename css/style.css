@@ -1,0 +1,158 @@
+
+body {
+    background-color: #777;
+    font-family: Helvetica, sans-serif;
+    color: #fff;
+}
+
+header, footer, .nav {
+    max-height: 80px;
+    align-content: center;
+    max-width: 940px;
+    margin: 10px auto 10px auto;
+    flex-direction: column;
+    background-color: #ebebeb;
+    color: #777;
+    display: flex;
+    padding: 20px;
+}
+
+header {
+    border-radius: 1em 1em 0 0;
+}
+
+footer {
+    border-radius: 0 0 1em 1em;
+}
+
+
+.main, .sect {
+    color: #777;
+    display: flex;
+    margin: auto;
+    flex: 1;
+}
+
+#note {
+    color: red;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) { /* Only show sections side-by-side if there is enough room */
+    .main {
+        max-width: 980px;
+        justify-content: space-around;
+        padding: 0 auto 0 auto;
+    }
+    
+    .sect {
+        background-color: #ebebeb;
+        flex-direction: column;
+        justify-content: space-around;
+        align-self: stretch;    
+        text-align: justify;
+        margin: 0px auto 0px auto;
+        padding: 20px;
+        flex: 1;
+    }
+
+    /* Create some space between (right/left when wide enough) */
+    .sect:first-child {
+        margin-right: 5px;
+    }
+
+    .sect:last-child {
+        margin-left: 5px;
+    }
+
+  }
+
+@media (max-width: 768px) { /* If too narrow, stack sections instead of side-by-side */
+    .main {
+        max-width: 768px;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 0 auto 0 auto;
+    }
+    
+    .sect {
+        max-width: 768px;
+        background-color: #ebebeb;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: stretch;    
+        text-align: justify;
+        margin: 0px auto 0px auto;
+        padding: 20px; /* make room for sections with and w/o articles */
+        flex: 1;
+    }
+
+    /* Create some space between (bottom/top when wide narrow) */
+    .sect:first-child {
+        margin-bottom: 5px;
+    }
+
+    .sect:last-child {
+        margin-top: 5px;
+    }
+
+}  
+
+@media (max-width: 639px) { /* Compact things a bit when mobile sized */
+    header, footer, .nav {
+        height: 20px;
+        padding: 10px;
+        max-width: 640px;
+    }
+
+    h1 {
+        font-size: 140%;
+    }
+
+    h2 {
+        font-size: 130%;
+    }
+
+    h3 {
+        font-size: 120%;
+    }
+
+    p {
+        font-size: 90%;
+    }
+
+    .main, .sect {
+        max-width: 640px;
+    }
+
+    .sect {
+        padding-top: 10px;
+    }
+
+}
+
+.article {
+    background-color: #777;
+    padding: 5px;
+    margin: 0 -10px -10px -10px; /* Make room for article title, also adjust bottom margin to net 10px */
+    color: #ebebeb;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-article {
+    background-color: #ebebeb;
+    text-align: justify;    
+    color: #777;
+    margin: 5px;
+    padding: 10px;
+    flex: 1;
+}
+
+#label {
+    text-align: center;
+    font-weight: bold;
+    display: inline;
+    margin: 5px;
+}
