@@ -25,6 +25,32 @@ footer {
     border-radius: 0 0 1em 1em;
 }
 
+.nav {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnTitle, .btnNav {
+    height: inherit;
+    line-height: inherit;
+    text-align: center; 
+    text-decoration: none;    
+    background-color: #ebebeb;
+    color: #777;    
+}
+
+.btnTitle {
+    flex: 3;
+    content: 'Clark Kent';    
+}
+
+
+.btnNav {
+    flex: 1;
+}
+
 
 .main, .sect {
     color: #777;
@@ -103,6 +129,23 @@ footer {
         height: 20px;
         padding: 10px;
         max-width: 640px;
+    }
+
+
+
+    .btnTitle h1 {
+        margin: 0;
+        padding: 0;
+    }    
+
+    .btnTitle h1 {
+        font-size: 80%;
+        padding-top: 5px;
+    }
+
+    .btnNav {
+        font-size: 60%;
+        padding-top: 10px;
     }
 
     h1 {
